@@ -2,8 +2,8 @@ package ua.home_studying.homework14;
 
 public class Counter {
 
-    int countLeft = 0;
-    int countRight = 0;
+    int countLeft;
+    int countRight;
 
     public void countLeft() {
         countLeft++;
@@ -13,11 +13,19 @@ public class Counter {
         countRight++;
     }
 
-    public String getCountLeft() {
-        return String.valueOf(countLeft);
+    public int getCountLeft() {
+        return countLeft;
     }
 
-    public String getCountRight() {
-        return String.valueOf(countRight);
+    public void setCountLeft(int countLeft) {
+        this.countLeft = countLeft;
+    }
+
+    public void setCountRight(int countRight) {
+        this.countRight = countRight;
+    }
+
+    public int getCountRight() {
+        return countRight;
     }
 }
