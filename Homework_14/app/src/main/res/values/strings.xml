@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Homework14</string>
+    <string name="counter_r">Counter right</string>
+    <string name="counter_l">Counter left</string>
+</resources>
