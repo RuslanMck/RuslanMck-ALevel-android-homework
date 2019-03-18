@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Homework15</string>
+    <string name="choose_cat_breed">Choose cat\'s breed</string>
+    <string name="bengal">Bengal</string>
+    <string name="persian">Persian</string>
+    <string name="siamese">Siamese</string>
+    <string name="turkish">Turkish</string>
+    <string name="select_cat_s_breed">Select cat\'s breed</string>
+</resources>
