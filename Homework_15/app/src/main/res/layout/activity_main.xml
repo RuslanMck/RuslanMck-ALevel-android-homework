@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/headerText"
+        android:id="@+id/textView_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -15,7 +15,7 @@
         android:text="@string/choose_cat_breed"
         android:textSize="20sp"
         android:textColor="@color/Black"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,40 +23,40 @@
 
 
     <RadioGroup
-        android:id="@+id/radioGroup3"
+        android:id="@+id/radioGroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/selectButton"
+        app:layout_constraintBottom_toTopOf="@+id/button_select"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerText">
+        app:layout_constraintTop_toBottomOf="@+id/textView_header">
 
         <RadioButton
-            android:id="@+id/bengalButton"
+            android:id="@+id/radio_bengal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/bengal" />
 
         <RadioButton
-            android:id="@+id/persianButton"
+            android:id="@+id/radio_persian"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/persian" />
 
         <RadioButton
-            android:id="@+id/siameseButton"
+            android:id="@+id/radio_siamese"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/siamese" />
 
         <RadioButton
-            android:id="@+id/turkishVanButton"
+            android:id="@+id/radio_turkish"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -66,26 +66,26 @@
 
 
     <Button
-        android:id="@+id/selectButton"
+        android:id="@+id/button_select"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="@string/select_cat_s_breed"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView2"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup3" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView2"
+        android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectButton" />
+        app:layout_constraintTop_toBottomOf="@+id/button_select" />
 
 
 </android.support.constraint.ConstraintLayout>
