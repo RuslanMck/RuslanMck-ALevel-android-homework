@@ -2,11 +2,13 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_gray">
+    xmlns:tool="http://schemas.android.com/tools"
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/single_image_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        tool:src="@drawable/bengal_01"/>
 
 </android.support.constraint.ConstraintLayout>

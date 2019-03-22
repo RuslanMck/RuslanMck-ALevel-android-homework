@@ -1,6 +1,7 @@
 package ua.home_studying.homework_16;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,14 +38,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(CustomAdapter.ViewHolder viewHolder, int i) {
-//        viewHolder.imageView.setImageResource(imagesList.get(i).getImageLink());
+    public void onBindViewHolder(CustomAdapter.ViewHolder viewHolder, final int i) {
         viewHolder.imageView.setImageResource(imagesList.get(i).getImageLink());
         viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Clicked", Toast.LENGTH_SHORT).show();
-                /* TODO */
+                Intent intent = new Intent(context, SingleImageActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("image",imagesList.get(i).getImageLink());
+                context.startActivity(intent);
             }
         });
     }
