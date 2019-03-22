@@ -1,67 +1,87 @@
 package ua.home_studying.homework_16;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Adapter;
+import android.widget.Button;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String TAG = "tag";
-    ImagesListCreator imagesListCreator = new ImagesListCreator();
+    private static final int PICK_IMAGE = 101;
+    private static final String TAG = "qwe";
+    ArrayList<ImageItem> imageItems = new ArrayList<>();
+    String stringUri;
+    RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        adapter = initAdapter();
+        initRecyclerView();
 
+        setButton();
+    }
+
+    private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),3);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 3);
         recyclerView.setLayoutManager(layoutManager);
-
-        ArrayList<ImageItem> imageItems = imagesListCreator.create();
-        CustomAdapter adapter = new CustomAdapter(imageItems, getApplicationContext());
-        Log.e(TAG, "imgIts " + imageItems.size() );
         recyclerView.setAdapter(adapter);
+    }
 
+    private RecyclerView.Adapter initAdapter() {
+        ImagesListCreator imagesListCreator = new ImagesListCreator();
+        imageItems = imagesListCreator.create();
+        return new CustomAdapter(imageItems, getApplicationContext());
+    }
 
-
+    private void refreshAdapter(RecyclerView.Adapter adapter) {
+        adapter.notifyDataSetChanged();
     }
 
 
+    private void setButton() {
 
+        Button button = findViewById(R.id.select_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pickImage();
+            }
+        });
+    }
 
-//    private ArrayList<ImageItem> setItems() {
-//        ArrayList<ImageItem> arrayList = new ArrayList();
-//        arrayList.add(new ImageItem(R.drawable.bengal_01));
-//        arrayList.add(new ImageItem(R.drawable.bengal_02));
-//        arrayList.add(new ImageItem(R.drawable.bengal_03));
-//        arrayList.add(new ImageItem(R.drawable.bengal_04));
-//        arrayList.add(new ImageItem(R.drawable.bengal_05));
-//        arrayList.add(new ImageItem(R.drawable.bengal_06));
-//        arrayList.add(new ImageItem(R.drawable.bengal_07));
-//        arrayList.add(new ImageItem(R.drawable.cat_001));
-//        arrayList.add(new ImageItem(R.drawable.cat_002));
-//        arrayList.add(new ImageItem(R.drawable.cat_003));
-//        arrayList.add(new ImageItem(R.drawable.cat_004));
-//        arrayList.add(new ImageItem(R.drawable.cat_005));
-//        arrayList.add(new ImageItem(R.drawable.cat_006));
-//        arrayList.add(new ImageItem(R.drawable.cat_007));
-//        arrayList.add(new ImageItem(R.drawable.cat_008));
-//        arrayList.add(new ImageItem(R.drawable.cat_009));
-//        arrayList.add(new ImageItem(R.drawable.cat_010));
-//        arrayList.add(new ImageItem(R.drawable.cat_011));
-//        arrayList.add(new ImageItem(R.drawable.cat_012));
-//        arrayList.add(new ImageItem(R.drawable.cat_013));
-//        arrayList.add(new ImageItem(R.drawable.cat_014));
-//        arrayList.add(new ImageItem(R.drawable.cat_015));
-//        arrayList.add(new ImageItem(R.drawable.cat_016));
-//        arrayList.add(new ImageItem(R.drawable.cat_017));
-//        arrayList.add(new ImageItem(R.drawable.cat_018));
-//        arrayList.add(new ImageItem(R.drawable.cat_019));
-//        return arrayList;
+    private void pickImage() {
+        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(Intent.createChooser(intent, "Choose your app"), PICK_IMAGE);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        Uri uri;
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
+            uri = data.getData();
+            stringUri = uri.toString();
+            Log.e(TAG, "size " + imageItems.size());
+            imageItems.add(new ImageItem(stringUri));
+            refreshAdapter(adapter);
+            Log.e(TAG, "size " + imageItems.size());
+        }
+    }
 }

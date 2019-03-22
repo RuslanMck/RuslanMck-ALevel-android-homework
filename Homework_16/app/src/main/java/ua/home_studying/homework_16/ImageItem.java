@@ -1,17 +1,13 @@
 package ua.home_studying.homework_16;
 
 public class ImageItem {
-    private Integer imageLink;
+    private String imageLink;
 
-    public ImageItem(Integer imageLink) {
+    public ImageItem(String imageLink) {
         this.imageLink = imageLink;
     }
 
-    public Integer getImageLink() {
+    public String getImageLink() {
         return imageLink;
-    }
-
-    public void setImageLink(Integer imageLink) {
-        this.imageLink = imageLink;
     }
 }

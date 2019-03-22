@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 public class SingleImageActivity extends AppCompatActivity {
 
     @Override
@@ -13,9 +15,9 @@ public class SingleImageActivity extends AppCompatActivity {
         setContentView(R.layout.single_image_activity);
 
         Intent intent = getIntent();
-        int res = intent.getIntExtra("image", R.drawable.ic_launcher_background);
+        String res = intent.getStringExtra("image");
 
         ImageView imageView = findViewById(R.id.single_image_view);
-        imageView.setImageResource(res);
+        Picasso.get().load(res).into(imageView);
     }
 }

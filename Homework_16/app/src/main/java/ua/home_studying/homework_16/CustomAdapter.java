@@ -1,14 +1,14 @@
 package ua.home_studying.homework_16;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -39,16 +39,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(CustomAdapter.ViewHolder viewHolder, final int i) {
-        viewHolder.imageView.setImageResource(imagesList.get(i).getImageLink());
-        viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, SingleImageActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.putExtra("image",imagesList.get(i).getImageLink());
-                context.startActivity(intent);
-            }
-        });
+        Picasso.get().load(imagesList.get(i).getImageLink()).into(viewHolder.imageView);
+        viewHolder.imageView.setOnClickListener(new ImageClickListener(context,imagesList,i));
     }
 
     @Override
