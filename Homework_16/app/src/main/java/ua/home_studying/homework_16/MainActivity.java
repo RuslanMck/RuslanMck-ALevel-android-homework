@@ -13,6 +13,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -21,7 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 101;
-    private static final String TAG = "qwe";
+    private static final String TAG = "tag2";
     ArrayList<ImageItem> imageItems = new ArrayList<>();
     String stringUri;
     RecyclerView.Adapter adapter;
@@ -30,10 +33,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        adapter = initAdapter();
-        initRecyclerView();
+        if (adapter == null){
+            adapter = initAdapter();
+        }
 
+        initRecyclerView();
         setButton();
+
+
+        if (getIntent().getData() != null) {
+            Log.e(TAG, "getIntent().getData( " + getIntent().getData().toString());
+            Uri uri = getIntent().getData();
+            stringUri = uri.toString();
+            Intent intent = new Intent(MainActivity.this, SingleImageActivity.class);
+            intent.putExtra("image", stringUri);
+            startActivity(intent);
+            Log.e(TAG, "onCreate: " + imageItems.size() );
+        }
     }
 
     private void initRecyclerView() {
@@ -68,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     private void pickImage() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
         startActivityForResult(Intent.createChooser(intent, "Choose your app"), PICK_IMAGE);
+        Log.e(TAG, "pickImage: " );
     }
 
     @Override
