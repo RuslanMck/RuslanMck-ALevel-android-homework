@@ -3,14 +3,16 @@ package ua.home_studying.homework_17.fighters;
 public abstract class BaseFighter {
     private String name;
     private String imgLink;
+    private Integer info;
     private int health;
     private int attack;
     private int defence;
 
 
-    public BaseFighter(String name, String imgLink, int health, int attack, int defence) {
+    public BaseFighter(String name, String imgLink, Integer info, int health, int attack, int defence) {
         this.name = name;
         this.imgLink = imgLink;
+        this.info = info;
         this.health = health;
         this.attack = attack;
         this.defence = defence;
@@ -30,6 +32,14 @@ public abstract class BaseFighter {
 
     public void setImgLink(String imgLink) {
         this.imgLink = imgLink;
+    }
+
+    public Integer getInfo() {
+        return info;
+    }
+
+    public void setInfo(Integer info) {
+        this.info = info;
     }
 
     public int getHealth() {

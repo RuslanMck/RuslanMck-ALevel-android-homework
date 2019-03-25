@@ -13,6 +13,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
+import ua.home_studying.homework_17.detail.DetailClickListener;
 import ua.home_studying.homework_17.fighters.BaseFighter;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
@@ -52,6 +53,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        viewHolder.itemView.setOnClickListener(new DetailClickListener(context, i, fighters));
         Picasso.get().load(fighters.get(i).getImgLink()).into(viewHolder.imageView);
         viewHolder.name.setText(fighters.get(i).getName());
         viewHolder.attack.setText(String.valueOf(fighters.get(i).getAttack()));

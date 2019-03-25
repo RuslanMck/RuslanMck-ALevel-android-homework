@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import ua.home_studying.homework_17.R;
 
 public class RandomDrawable {
-    ArrayList<String> drawable = new ArrayList<>();
-    BoundedRandomInt randomInt = new BoundedRandomInt();
+    private ArrayList<String> drawable = new ArrayList<>();
+    private BoundedRandomInt randomInt = new BoundedRandomInt();
 
     public RandomDrawable() {
         drawable.add("http://avatars.mitosa.net/quake/087.jpg");
