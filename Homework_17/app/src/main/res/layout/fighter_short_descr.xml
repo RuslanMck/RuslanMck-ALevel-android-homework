@@ -3,26 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/player_back">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65" />
 
     <ImageView
         android:id="@+id/item_description_image"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="92dp"
+        android:layout_height="92dp"
+        android:padding="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/guide_cat_icn" />
-
-    <TextView
-        android:id="@+id/item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/name"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/item_hp"
-        app:layout_constraintStart_toEndOf="@id/item_description_image"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:src="@drawable/guide_icn" />
 
     <TextView
         android:id="@+id/item_hp"
@@ -30,25 +29,98 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/health"
+        android:fontFamily="@font/pixel2"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@id/item_description_image"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/item_description_image"
-        app:layout_constraintTop_toBottomOf="@id/item_name" />
+        app:layout_constraintTop_toBottomOf="@id/item_name_field" />
 
     <TextView
         android:id="@+id/item_name_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/item_name"
-        app:layout_constraintTop_toTopOf="@id/item_name"
-        tools:text="NAME"/>
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/pixel2"
+
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/item_hp"
+        app:layout_constraintStart_toEndOf="@+id/item_description_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="NAME(10)" />
 
     <TextView
         android:id="@+id/item_hp_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/item_hp"
+        android:layout_marginStart="6dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/pixel2"
+
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@id/item_hp"
-        tools:text="100"/>
+        app:layout_constraintStart_toEndOf="@id/item_hp"
+        app:layout_constraintTop_toTopOf="@+id/item_hp"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/item_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/attack"
+        android:fontFamily="@font/pixel2"
+
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_name_field"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/item_name_field" />
+
+    <TextView
+        android:id="@+id/item_attack_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="@font/pixel2"
+
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_attack"
+        app:layout_constraintStart_toEndOf="@id/item_attack"
+        app:layout_constraintTop_toTopOf="@+id/item_attack"
+        tools:text="100" />
+
+    <TextView
+        android:id="@+id/item_defence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/defence"
+        android:textColor="@color/black"
+        android:fontFamily="@font/pixel2"
+
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_hp"
+        app:layout_constraintStart_toEndOf="@id/item_name_field"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="@id/item_hp" />
+
+    <TextView
+        android:id="@+id/item_defence_field"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/pixel2"
+
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/item_defence"
+        app:layout_constraintStart_toEndOf="@id/item_defence"
+        app:layout_constraintTop_toTopOf="@id/item_defence"
+        tools:text="100" />
+
+
+
+
 
 </android.support.constraint.ConstraintLayout>

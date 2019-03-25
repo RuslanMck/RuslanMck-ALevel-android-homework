@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Homework_17</string>
-    <string name="welcome_text">Welcome to cats Fighting club. \nChoose fighter or create new one.</string>
+    <string name="welcome_text">Welcome to Arena Fighting club. \nChoose fighter or create new one.</string>
     <string name="name">Name:</string>
     <string name="health">Health:</string>
+    <string name="attack">Attack:</string>
+    <string name="defence">Defence:</string>
 </resources>

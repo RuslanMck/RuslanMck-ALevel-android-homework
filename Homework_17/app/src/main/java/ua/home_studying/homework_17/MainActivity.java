@@ -2,12 +2,12 @@ package ua.home_studying.homework_17;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
-
-import ua.home_studying.homework_17.fighters.factory.CatsFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,8 +18,17 @@ public class MainActivity extends AppCompatActivity {
 
         initButton();
         initFighters();
+        initRecyclerView();
 
+    }
 
+    private void initRecyclerView() {
+        ArrayList fighters = CatsList.getList();
+        RecyclerView recyclerView = findViewById(R.id.recycler_vew);
+        RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(MainActivity.this);
+        recyclerView.setLayoutManager(layoutManager);
+        CustomAdapter customAdapter = new CustomAdapter(fighters,getApplicationContext());
+        recyclerView.setAdapter(customAdapter);
     }
 
     private void initButton() {
@@ -34,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initFighters() {
         CatsInitializer catsInitializer = new CatsInitializer();
-        catsInitializer.initialize(3);
+        catsInitializer.initialize(5);
     }
-
-
+    
 }

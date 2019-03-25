@@ -2,15 +2,18 @@ package ua.home_studying.homework_17.fighters;
 
 public abstract class BaseFighter {
     private String name;
-    private int ph;
-    private int ap;
-    private int deff;
+    private String imgLink;
+    private int health;
+    private int attack;
+    private int defence;
 
-    public BaseFighter(String name, int ph, int ap, int deff) {
+
+    public BaseFighter(String name, String imgLink, int health, int attack, int defence) {
         this.name = name;
-        this.ph = ph;
-        this.ap = ap;
-        this.deff = deff;
+        this.imgLink = imgLink;
+        this.health = health;
+        this.attack = attack;
+        this.defence = defence;
     }
 
     public String getName() {
@@ -21,27 +24,35 @@ public abstract class BaseFighter {
         this.name = name;
     }
 
-    public int getPh() {
-        return ph;
+    public String getImgLink() {
+        return imgLink;
     }
 
-    public void setPh(int ph) {
-        this.ph = ph;
+    public void setImgLink(String imgLink) {
+        this.imgLink = imgLink;
     }
 
-    public int getAp() {
-        return ap;
+    public int getHealth() {
+        return health;
     }
 
-    public void setAp(int ap) {
-        this.ap = ap;
+    public void setHealth(int health) {
+        this.health = health;
     }
 
-    public int getDeff() {
-        return deff;
+    public int getAttack() {
+        return attack;
     }
 
-    public void setDeff(int deff) {
-        this.deff = deff;
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
     }
 }
