@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class RandomName {
     private String[] names = new String[]{"Ron",
-            "Bert", "Alex", "Alastair", "Andrew ", "Angus", "Bartholomew", "Berthold", "Elvis", "Gabe", "Harold", "Hector", "Jack", "Karl", "Malcolm", "Abigail",
+            "Bert", "Alex", "Alastair", "Andrew ", "Angus", "Bart", "Berthold", "Elvis", "Gabe", "Harold", "Hector", "Jack", "Karl", "Malcolm", "Abigail",
             "Alana", "Barbara", "Carmen", "Gladys", "Julia", "Marina"};
     private Random random = new Random();
     private int rnd;
@@ -15,6 +15,6 @@ public class RandomName {
      */
     public String setRandomName(){
         rnd = random.nextInt(names.length );
-        return names[rnd];
+        return names[rnd] + random.nextInt(100);
     }
 }

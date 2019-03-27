@@ -65,4 +65,9 @@ public abstract class BaseFighter {
     public void setDefence(int defence) {
         this.defence = defence;
     }
+
+    public void getDamag(BaseFighter opponent){
+        this.setHealth((this.getHealth() + this.getDefence()) - opponent.getAttack());
+    }
+
 }

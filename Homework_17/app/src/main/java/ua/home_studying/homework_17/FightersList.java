@@ -2,16 +2,17 @@ package ua.home_studying.homework_17;
 
 import java.util.ArrayList;
 
+import ua.home_studying.homework_17.fighters.BaseFighter;
 import ua.home_studying.homework_17.fighters.FighterQuake;
 
-public class CatsList {
-    private static ArrayList<FighterQuake> list;
+public class FightersList {
+    private static ArrayList<BaseFighter> list;
 
     static {
         list = new ArrayList<>();
     }
 
-    private CatsList() {
+    private FightersList() {
 
     }
 
@@ -21,5 +22,9 @@ public class CatsList {
 
     public static ArrayList getList(){
         return list;
+    }
+
+    public static BaseFighter getFighter(int index){
+        return list.get(index);
     }
 }

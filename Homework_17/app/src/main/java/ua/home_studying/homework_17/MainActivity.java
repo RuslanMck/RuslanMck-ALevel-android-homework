@@ -1,12 +1,12 @@
 package ua.home_studying.homework_17;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        ArrayList fighters = CatsList.getList();
+        ArrayList fighters = FightersList.getList();
         RecyclerView recyclerView = findViewById(R.id.recycler_vew);
         RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
@@ -33,17 +33,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initButton() {
-        Button button = findViewById(R.id.button_add_cat);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button addButton = findViewById(R.id.button_add);
+        addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, CreateFighterActivity.class);
+                startActivity(intent);
             }
         });
     }
 
     private void initFighters() {
-        CatsInitializer catsInitializer = new CatsInitializer();
-        catsInitializer.initialize(5);
+        FightersInitializer fightersInitializer = new FightersInitializer();
+        fightersInitializer.initialize(10);
     }
 }

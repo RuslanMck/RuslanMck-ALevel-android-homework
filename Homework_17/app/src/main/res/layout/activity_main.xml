@@ -24,11 +24,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="8dp"
-        app:layout_constraintBottom_toTopOf="@id/button_add_cat"
+        app:layout_constraintBottom_toTopOf="@id/button_add"
         app:layout_constraintTop_toBottomOf="@id/guide_layout" />
 
     <Button
-        android:id="@+id/button_add_cat"
+        android:id="@+id/button_add"
+        android:text="@string/create_fighter"
+        android:fontFamily="@font/pixel2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
