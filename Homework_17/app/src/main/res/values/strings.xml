@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Homework_17</string>
+    <string name="welcome_text">Welcome to Arena Fighting club. \nChoose fighter or create new one.</string>
+    <string name="name">Name</string>
+    <string name="health">Health</string>
+    <string name="attack">Attack</string>
+    <string name="defence">Defence</string>
+    <string name="back">back</string>
+    <string name="start_fight">start fight</string>
+    <string name="info">Info</string>
+    <string name="info_hint">Set URL on avatar you want to get</string>
+    <string name="choose_opponent">Opponent</string>
+
+    <string name="info01">Was born on a wild planet. All his life he fought for survival, his body is covered with scars, his soul is thirsty for blood.</string>
+    <string name="info02">A descendant of the royal family, a noble knight fighting for good and justice.</string>
+    <string name="info03">This bounty hunter takes on any dirty work. The only thing he cares about is gold.</string>
+    <string name="info04">This farmer had to take up arms when the world eaters attacked his planet. Since then, he can not find peace.</string>
+    <string name="info05">One of the squad destroyers of worlds. Ruthless killer who eats the bodies of their victims.</string>
+    <string name="info06">I\'m tired of writing information, so let this be nonsense. Let\'s see if someone will read.</string>
+    <string name="info07">This is an unknown player, I have no information.</string>
+    <string name="add">add</string>
+    <string name="create_fighter">create fighter</string>
+    <string name="won"> WON!</string>
+</resources>
