@@ -32,17 +32,25 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListeners() {
         buttonStart.setOnClickListener(this::startCount);
+        buttonControl.setOnClickListener(this::startControl);
+    }
+
+    private void startControl(View view) {
+        Intent intent = new Intent(this, ControlActivity.class);
+        startActivity(intent);
     }
 
     private void startCount(View view) {
         Intent intent = new Intent(this, CountDownService.class);
         startService(intent);
+        buttonControl.setVisibility(View.VISIBLE);
     }
 
     private void initViews() {
         textViewCounter = findViewById(R.id.text_view_counter);
         buttonStart = findViewById(R.id.button_start_count);
         buttonControl = findViewById(R.id.button_control);
+        buttonControl.setVisibility(View.GONE);
     }
 
     @Override
@@ -63,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             int value = intent.getIntExtra("KEY",0);
-            textViewCounter.setText(getString(R.string.main_activity_counter, value));
+            textViewCounter.setText(getString(R.string.counter_textview, value));
         }
     }
 }

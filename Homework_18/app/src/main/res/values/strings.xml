@@ -3,5 +3,7 @@
     <string name="lets_start_counting">Lets start counting</string>
     <string name="start">start</string>
     <string name="open_control">open control</string>
-    <string name="main_activity_counter">Counter: %d</string>
+    <string name="counter_textview">Counter: %d</string>
+    <string name="plus_twenty">plus 20</string>
+    <string name="start_foregfound">start foreground</string>
 </resources>
