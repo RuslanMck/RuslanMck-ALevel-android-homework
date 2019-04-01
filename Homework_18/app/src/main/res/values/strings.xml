@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Homework_18</string>
+    <string name="lets_start_counting">Lets start counting</string>
+    <string name="start">start</string>
+    <string name="open_control">open control</string>
+    <string name="main_activity_counter">Counter: %d</string>
+</resources>
