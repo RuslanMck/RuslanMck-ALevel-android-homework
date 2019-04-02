@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
 
+        <service android:name=".services.CountDownIntentService" />
         <service android:name=".services.CountDownService" />
     </application>
 
