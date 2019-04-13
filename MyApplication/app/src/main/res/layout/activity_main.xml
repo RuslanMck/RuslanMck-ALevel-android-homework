@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ua.home_studying.myapplication.CopositView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:drawId="@drawable/ic_person"
+        app:ftv_font="grafix"
+        app:name="@string/app_name"
+
+        >
+
+        <ua.home_studying.myapplication.ColoredPoint
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_gravity="bottom|center_horizontal"
+            app:cp_color="@color/colorPrimary"
+            app:cp_radius="34dp" />
+
+    </ua.home_studying.myapplication.CopositView>
+
+</LinearLayout>

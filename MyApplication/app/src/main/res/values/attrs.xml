@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FontTextView">
+        <attr name="ftv_font" />
+    </declare-styleable>
+
+    <declare-styleable name="CopositView">
+        <attr name="drawId" format="integer" />
+        <attr name="name" format="string" />
+        <attr name="ftv_font" />
+    </declare-styleable>
+
+    <declare-styleable name="ColoredPoint">
+        <attr name="cp_color" format="color" />
+        <attr name="cp_radius" format="dimension" />
+    </declare-styleable>
+
+
+    <attr name="ftv_font" format="enum">
+        <enum name="redtown" value="1" />
+        <enum name="grafix" value="2" />
+    </attr>
+
+
+</resources>

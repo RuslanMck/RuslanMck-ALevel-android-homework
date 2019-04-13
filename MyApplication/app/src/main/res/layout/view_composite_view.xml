@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/img_acount_avatar"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:saveEnabled="false"/>
+
+    <ua.home_studying.myapplication.FontTextVIew
+        android:id="@+id/txt_acount_name"
+        android:textSize="96sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
